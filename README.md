@@ -127,7 +127,7 @@ I imported the data into SQL Server Management Studio using the flat file option
     COUNT(*) AS num_shipments,
       AVG(shipping_cost) AS avg_cost,
       SUM(shipping_cost) AS total_cost
-      FROM orders
+      FROM dbo.[KMS Sql Case Study]
       GROUP BY Ship_mode, Order_priority
      ORDER BY Ship_mode, Order_priority;
  <img width="536" height="351" alt="Screenshot 2026-09-21 144128" src="https://github.com/user-attachments/assets/45de8550-ce44-4263-a062-e82126a50d1c" />
