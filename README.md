@@ -166,6 +166,6 @@ The three findings build directly on one another. The first finding, that Delive
 
 Based on this evidence, it can be concluded that KMS did not appropriately allocate shipping costs based on order priority. More significantly, the inefficiency is not limited to priority mismatches alone, the company appears to be relying heavily on a shipping method that is both slow and the most costly option available, with no clear justification tied to cost-saving or urgency. This points to a broader operational issue in how shipping methods are selected, independent of how urgent any individual order happens to be.
 
-feel free to connect with me on [linkedin](https://www.linkedin.com/in/omotayo-babatunde) or send an email to                                     
-[bomotayo99@gmail.com](https://mailto:bomotayo99@gmail.com)
+feel free to connect with me on [linkedin](https://www.linkedin.com/in/omotayo-babatunde) or send an email to   [bomotayo99@gmail.com](https://mailto:bomotayo99@gmail.com)
+  
    Thank you for reading!
