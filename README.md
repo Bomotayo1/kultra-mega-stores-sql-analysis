@@ -1,7 +1,7 @@
 # kultra Mega Stores: SQL Sales Analysis
 
 ## Overview
-Analysis of Kultra Mega Stores' sales data (2009-2012) using SQL Server to answer business questions for management.
+This project features a detailed analysis of four years' worth of sales and order data from Kultra Mega Stores Analysis. Using SQL, the project uncovers key business insights, including top-performing products, customer behaviors, shipping cost efficiency, and regional sales performance. The analysis supports strategic decision-making aimed at improving profitability, optimizing shipping logistics, and strengthening customer engagement across various segments.
 
 ## Business Questions 
 1. Which product category had the highest sales?
@@ -21,4 +21,44 @@ Analysis of Kultra Mega Stores' sales data (2009-2012) using SQL Server to answe
 
 ## Approach
 I imported the data into SQL Server Management Studio using the flat file option. Afterward, I selected the top 10 rows to review all the columns. Once I confirmed the structure, I began writing queries to explore the data and answer my business questions.
+
+## Sample Query
+1. Which Product Category had the highest sales?
+   ```sql
+   select top 1 product_category, sum(sales) AS [Total sales]
+   FROM   dbo.[KMS Sql Case Study]
+   GROUP BY  product_category
+   ORDER BY   [Total sales] desc
+<img width="269" height="57" alt="Screenshot 2026-09-21 123924" src="https://github.com/user-attachments/assets/774a8d98-a44c-4923-a0e7-6e32e8990522" />
+
+2. What are the Top 3 and Bottom 3 regions in terms of sales?
+   
+   ---**TOP 3 Regions**
+ ```sql
+    select top 3 Region, sum(sales) AS [Total sales]
+     from   dbo.[KMS Sql Case Study]
+     group by  region
+     order by  [Total sales] desc
+```
+  <img width="183" height="91" alt="Screenshot 2026-09-21 124636" src="https://github.com/user-attachments/assets/e682bd59-2f2e-4591-be94-8c1cd466f958" />
+
+  ---- **Bottom 3 regions**
+```sql
+        Select top 3 Region, sum(sales) AS [Total sales] 
+        From  dbo.[KMS Sql Case Study]
+        group by region
+        Order by  [Total sales] Asc
+```
+<img width="263" height="91" alt="Screenshot 2026-09-21 132529" src="https://github.com/user-attachments/assets/d9d9c645-6b75-4da9-a0b2-be5890425b95" />
+
+3. What were the total sales of appliances in Ontario?
+   ```sql
+          SELECT PRODUCT_SUB_CATEGORY ,REGION, SUM(SALES) AS [TOTAL SALES]
+           FROM dbo.[KMS Sql Case Study]
+           WHERE PRODUCT_SUB_CATEGORY = 'APPLIANCES'
+          AND REGION = 'ONTARIO'
+          GROUP BY PRODUCT_SUB_CATEGORY, REGION
+          ORDER BY [TOTAL SALES]
+ <img width="329" height="47" alt="Screenshot 2026-09-21 132756" src="https://github.com/user-attachments/assets/b51637bf-3772-42f5-be83-9a478530d351" />
+
 
