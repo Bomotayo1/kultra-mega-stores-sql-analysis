@@ -61,4 +61,13 @@ I imported the data into SQL Server Management Studio using the flat file option
           ORDER BY [TOTAL SALES]
  <img width="329" height="47" alt="Screenshot 2026-09-21 132756" src="https://github.com/user-attachments/assets/b51637bf-3772-42f5-be83-9a478530d351" />
 
+4. Advise the management of KMS on what to do to increase the revenue from the bottom 10 customers?
+    ```sql
+        select top 10 Customer_Name,customer_segment, sum(sales) AS [Total sales], sum(profit) AS [Total profit],
+         count(distinct Order_ID) AS num_orders,
+         Avg(CAST(discount as float)) as Avg_discount
+          from dbo.[KMS Sql Case Study]
+          group by Customer_Name,Customer_Segment
+           order by [Total sales] ASC
+<img width="533" height="210" alt="Screenshot 2026-09-21 133332" src="https://github.com/user-attachments/assets/c51a608c-2fc3-4adf-9fb5-9981f676600b" />
 
