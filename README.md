@@ -71,3 +71,21 @@ I imported the data into SQL Server Management Studio using the flat file option
            order by [Total sales] ASC
 <img width="533" height="210" alt="Screenshot 2026-09-21 133332" src="https://github.com/user-attachments/assets/c51a608c-2fc3-4adf-9fb5-9981f676600b" />
 
+5. Most costly Shipping method
+   ```sql
+   SELECT TOP 1 SHIP_MODE, SUM(SHIPPING_COST) AS [TOTAL SHIPPING COST]
+   FROM dbo.[KMS Sql Case Study]
+   GROUP BY SHIP_MODE
+   ORDER BY [TOTAL SHIPPING COST]DESC
+<img width="243" height="49" alt="Screenshot 2026-09-21 133748" src="https://github.com/user-attachments/assets/fe060334-f544-494c-8757-37dad573cd00" />
+
+6. Who are the most valuable customers, and what products or services do they typically purchase?
+   ```sql
+   SELECT top 5 CUSTOMER_NAME, PRODUCT_NAME, SUM(SALES) AS [TOTAL SALES], sum(profit) As [Total Profit],
+    count(Distinct Order_ID) AS num_orders,
+       SUM(sales) / Count(Distinct Order_ID) AS avg_Order_value
+          FROM dbo.[KMS Sql Case Study]
+             GROUP BY Customer_Name, Product_Name
+                ORDER BY [TOTAL SALES]DESC
+  <img width="760" height="142" alt="Screenshot 2026-09-21 134221" src="https://github.com/user-attachments/assets/22a104a1-a478-4499-b6b6-d0c2c1a0310f" />
+
