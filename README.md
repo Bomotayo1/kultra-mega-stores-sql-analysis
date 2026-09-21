@@ -116,3 +116,19 @@ I imported the data into SQL Server Management Studio using the flat file option
            Group by customer_Name
            Order by Totalprofit Desc
   <img width="197" height="45" alt="Screenshot 2026-09-21 135117" src="https://github.com/user-attachments/assets/e8a7e307-f8f3-4587-90ae-3d99f67c00d7" />
+
+10. Which customer returned items, and what segment do they belong to?
+
+11. If the delivery truck is the most economical but the slowest shipping method, and express air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the order priority? Explain your answer
+    ```sql
+    select 
+      order_priority, ship_mode,
+	  count(*) AS num_orders,
+	  sum(shipping_cost) AS total_cost
+      from dbo.[KMS Sql Case Study]
+    where  
+       (Order_priority IN ('Low','Medium') AND ship_mode = 'Express Air')
+	     OR (Order_priority IN ('Critical''High') And Ship_mode = 'Delivery Truck')
+	   Group by order_priority, ship_mode
+	     order by total_cost DESC
+ <img width="328" height="66" alt="Screenshot 2026-09-21 135621" src="https://github.com/user-attachments/assets/3d82f892-88a3-4d60-8976-bad2c934d7a3" />
