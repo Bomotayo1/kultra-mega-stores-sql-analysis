@@ -89,3 +89,13 @@ I imported the data into SQL Server Management Studio using the flat file option
                 ORDER BY [TOTAL SALES]DESC
   <img width="760" height="142" alt="Screenshot 2026-09-21 134221" src="https://github.com/user-attachments/assets/22a104a1-a478-4499-b6b6-d0c2c1a0310f" />
 
+7. Which small business customer had the highest sales?
+     ```sql
+            SELECT TOP 1 Customer_Name, Customer_Segment, SUM(SALES) AS [TOTAL SALES]
+            FROM dbo.[KMS Sql Case Study]
+             WHERE [Customer_Segment] = 'SMALL BUSINESS'
+             GROUP BY Customer_Name, Customer_Segment
+              ORDER BY [TOTAL SALES]DESc
+ <img width="343" height="48" alt="Screenshot 2026-09-21 134518" src="https://github.com/user-attachments/assets/de48e5b2-efb8-49c9-99f3-4aeb0595c45a" />
+
+
