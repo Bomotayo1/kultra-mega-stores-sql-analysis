@@ -130,5 +130,6 @@ I imported the data into SQL Server Management Studio using the flat file option
       FROM orders
       GROUP BY Ship_mode, Order_priority
      ORDER BY Ship_mode, Order_priority;
- <img width="273" height="205" alt="Screenshot 2026-09-21 144122" src="https://github.com/user-attachments/assets/e4b294f7-decd-4295-8660-fe0d02f1029d" />
+ <img width="536" height="351" alt="Screenshot 2026-09-21 144128" src="https://github.com/user-attachments/assets/45de8550-ce44-4263-a062-e82126a50d1c" />
+
 
