@@ -125,10 +125,10 @@ I imported the data into SQL Server Management Studio using the flat file option
     Ship_mode,
     Order_priority,
     COUNT(*) AS num_shipments,
-    AVG(shipping_cost) AS avg_cost,
-    SUM(shipping_cost) AS total_cost
-FROM orders
-GROUP BY Ship_mode, Order_priority
-ORDER BY Ship_mode, Order_priority;
+      AVG(shipping_cost) AS avg_cost,
+      SUM(shipping_cost) AS total_cost
+      FROM orders
+      GROUP BY Ship_mode, Order_priority
+     ORDER BY Ship_mode, Order_priority;
  <img width="273" height="205" alt="Screenshot 2026-09-21 144122" src="https://github.com/user-attachments/assets/e4b294f7-decd-4295-8660-fe0d02f1029d" />
 
