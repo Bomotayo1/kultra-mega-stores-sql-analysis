@@ -121,14 +121,14 @@ I imported the data into SQL Server Management Studio using the flat file option
 
 11. If the delivery truck is the most economical but the slowest shipping method, and express air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the order priority? Explain your answer
     ```sql
-    select 
-      order_priority, ship_mode,
-	  count(*) AS num_orders,
-	  sum(shipping_cost) AS total_cost
-      from dbo.[KMS Sql Case Study]
-    where  
-       (Order_priority IN ('Low','Medium') AND ship_mode = 'Express Air')
-	     OR (Order_priority IN ('Critical''High') And Ship_mode = 'Delivery Truck')
-	   Group by order_priority, ship_mode
-	     order by total_cost DESC
- <img width="328" height="66" alt="Screenshot 2026-09-21 135621" src="https://github.com/user-attachments/assets/3d82f892-88a3-4d60-8976-bad2c934d7a3" />
+    SELECT 
+    Ship_mode,
+    Order_priority,
+    COUNT(*) AS num_shipments,
+    AVG(shipping_cost) AS avg_cost,
+    SUM(shipping_cost) AS total_cost
+FROM orders
+GROUP BY Ship_mode, Order_priority
+ORDER BY Ship_mode, Order_priority;
+ <img width="273" height="205" alt="Screenshot 2026-09-21 144122" src="https://github.com/user-attachments/assets/e4b294f7-decd-4295-8660-fe0d02f1029d" />
+
