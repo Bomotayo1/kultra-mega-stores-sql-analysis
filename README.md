@@ -98,4 +98,21 @@ I imported the data into SQL Server Management Studio using the flat file option
               ORDER BY [TOTAL SALES]DESc
  <img width="343" height="48" alt="Screenshot 2026-09-21 134518" src="https://github.com/user-attachments/assets/de48e5b2-efb8-49c9-99f3-4aeb0595c45a" />
 
+8.  Which corporate customer placed the most number of orders in 2009-2012?
+      ```sql
+      select top 1 customer_Name, Count(distinct Order_ID) AS num_Orders
+         from dbo.[KMS Sql Case Study]
+          where customer_segment = 'Corporate'
+          And year(Order_Date) between 2009 and 2012
+          Group By Customer_Name
+           Order By num_Orders DESC
+   <img width="221" height="52" alt="Screenshot 2026-09-21 134846" src="https://github.com/user-attachments/assets/859dabd4-494b-49e7-8bd4-48db3396416c" />
 
+9. Which consumer customer was the most profitable one?
+     ```sql
+         select top 1 customer_Name, sum(Profit) as TotalProfit
+          from dbo.[KMS Sql Case Study]
+           where customer_segment = 'Consumer'
+           Group by customer_Name
+           Order by Totalprofit Desc
+  <img width="197" height="45" alt="Screenshot 2026-09-21 135117" src="https://github.com/user-attachments/assets/e8a7e307-f8f3-4587-90ae-3d99f67c00d7" />
